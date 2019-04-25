@@ -6,32 +6,36 @@ using System.Threading.Tasks;
 
 namespace Szkolenie.Tasks
 {
-    public class ToDoItem
+    public abstract class Item
     {
-        public static int LastID=0;
-        public int TaskID;
-        public string Title;
+
+    }
+
+    public class ToDoItem:Item
+    {
+        private static int lastID=0;
+        protected int taskID;
+        public string Title { get; set; }
         public bool Done;
-        public DateTime DueDate;
+        private DateTime dueDate;
 
         static ToDoItem()
         {
-            LastID = 100;
+            lastID = 100;
             Console.WriteLine("Static Constructor");
         }
-
 
         public ToDoItem()
         {
             Title = "Brak";
             DueDate = DateTime.Now.AddDays(1);
-            TaskID = NewID();
+            taskID = NewID();
         }
 
         public ToDoItem(string title):this()
         {
             Title = title;
-            DueDate = DateTime.Now.AddDays(1);
+            //DueDate = DateTime.Now.AddDays(1);
             //TaskID = 1;
         }
 
@@ -42,14 +46,51 @@ namespace Szkolenie.Tasks
             //TaskID = 1;
         }
 
-        public string Info()
+        public virtual string Info()
         {
-            return $"Task:{TaskID}, Title: {Title}, Date: {DueDate}, Done:{Done}";
+            return $"Task:{TaskID}, Title: {Title}, Date: {DueDate.ToString("yyyy-MM-dd")}, Done:{Done}";
         }
 
-        public static int NewID()
+        private static int NewID()
         {
-            return ++LastID;
+            return ++lastID;
+        }
+
+        public static int LastID()
+        {
+            return lastID;
+        }
+
+        //Property
+        public DateTime DueDate
+        {
+            get { return dueDate; }
+            set {
+                if (value < DateTime.Now)
+                {
+                    throw new FormatException("Bad Date.");
+                }
+                dueDate =value;
+            }
+        }
+
+        public int TaskID
+        {
+            get { return taskID; }
+        }
+
+        public int DaysToEnd
+        {
+            get
+            {
+                return DateTime.Now.Subtract(dueDate).Days;
+            }
+        }
+
+        //Destruktor
+        ~ToDoItem()
+        {
+            Console.WriteLine($"Destrukcja {TaskID}");
         }
 
     }

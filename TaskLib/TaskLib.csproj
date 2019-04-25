@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ITaskManager.cs" />
+    <Compile Include="ProjectTask.cs" />
+    <Compile Include="TaskMan.cs" />
+    <Compile Include="TaskNumber.cs" />
+    <Compile Include="TaskStatus.cs" />
     <Compile Include="ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
