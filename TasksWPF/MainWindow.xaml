@@ -1,0 +1,21 @@
+﻿<Window x:Class="TasksWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TasksWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="270" Width="684.5">
+    <Grid>
+        <TextBox x:Name="infoText" HorizontalAlignment="Left" Height="23" Margin="24,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFBBF789"/>
+        <Button x:Name="infoButton" HorizontalAlignment="Left" Margin="158,21,0,0" VerticalAlignment="Top" Width="89" Height="67" Background="#FF44AEF7" Click="InfoButton_Click">
+            <StackPanel>
+                <Label Height="23" Width="43" Content="Ok"/>
+                <Ellipse Height="20" Fill="#FFDA3636"/>
+            </StackPanel>
+        </Button>
+        <Label x:Name="infoLabel" Content="" HorizontalAlignment="Left" Margin="267,21,0,0" VerticalAlignment="Top" Width="293" Grid.ColumnSpan="2" Background="#FFF5FDA7"/>
+        <Button x:Name="newTaskButton" Content="New Task" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" Width="75" Click="NewTaskButton_Click"/>
+
+    </Grid>
+</Window>
