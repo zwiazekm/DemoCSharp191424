@@ -15,7 +15,33 @@ namespace TasksRuntime
             //EnumDemo();
             //InterfeaceDemo();
 
-            ToDoWorker();
+            Payment p1 = new Payment("Platnosc 1", DateTime.Now.AddDays(1), 200M);
+            p1.charge += demoCharge;
+            p1.charge += am => am * 0.2M;
+            p1.onOverPayment += P1_onOverPayment;
+            Payment p2 = new Payment("Platnosc 2", DateTime.Now.AddDays(1), 300M);
+            p2.charge += demoCharge;
+
+            p1.Interest2(a => a * 0.1M);
+            p2.Interest2(demoCharge);
+            p1.Interest3((a,d)=> { int days = DateTime.Now.Subtract(d).Days;
+                return a * 0.1M * days;
+            });
+            p1.Interest();
+            p1.Refund(300M);
+
+            //ToDoWorker();
+        }
+
+        private static void P1_onOverPayment(object sender, EventArgs e)
+        {
+            Payment p = (Payment)sender;
+            Console.WriteLine($"Nadplata w kwocie {p.Balance}");
+        }
+
+        private static decimal demoCharge(decimal am)
+        {
+            return am * 0.2M;
         }
 
         private static void InterfeaceDemo()

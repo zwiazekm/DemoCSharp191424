@@ -28,7 +28,9 @@ namespace Szkolenie.Tasks
 
         public void DeleteTask(int taskID)
         {
-            throw new NotImplementedException();
+            var wynik = (from t in tasks
+                         where t.TaskID == taskID
+                         select t).Single();
         }
 
         public List<string> UncompletedTask()
