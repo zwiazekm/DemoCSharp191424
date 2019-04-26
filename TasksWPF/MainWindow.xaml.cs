@@ -98,5 +98,34 @@ namespace TasksWPF
             }
 
         }
+
+        private void ReadStrem_Click(object sender, RoutedEventArgs e)
+        {
+            string path = ConfigurationManager.AppSettings["myPath"];
+            FileStream file = new FileStream(path, FileMode.Open);
+            //Binarne
+            BinaryReader binRead = new BinaryReader(file);
+            byte[] data = new byte[binRead.BaseStream.Length];
+            int position = 0;
+            int retByte;
+            while ((retByte = binRead.Read()) != -1)
+            {
+                data[position] = (byte)retByte;
+                position += sizeof(byte);
+            }
+            binRead.Close();
+            file.Close();
+            BinaryWriter binWrite = new BinaryWriter(file);
+            //Tekstowe
+            StreamReader txtRead = new StreamReader(file);
+            StringBuilder txtData = new StringBuilder();
+            while (txtRead.Peek() != -1)
+            {
+                txtData.AppendLine(txtRead.ReadLine());
+            }
+            txtRead.Close();
+            StringWriter txtWrite = new StringWriter();
+           
+        }
     }
 }

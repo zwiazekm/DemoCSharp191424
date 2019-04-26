@@ -19,7 +19,7 @@
         <ListBox x:Name="taskList" HorizontalAlignment="Left" Height="100" Margin="180,105,0,0" VerticalAlignment="Top" Width="340"/>
         <Button x:Name="taskListButton" Content="Niezakończone" HorizontalAlignment="Left" Margin="24,141,0,0" VerticalAlignment="Top" Width="120" Click="TaskListButton_Click"/>
         <Button x:Name="saveUncompleted" Content="Zapisz niezakończone" HorizontalAlignment="Left" Height="20" Margin="24,171,0,0" VerticalAlignment="Top" Width="120" Click="SaveUncompleted_Click"/>
-        <Button x:Name="readStrem" Content="Odczyt Stream" HorizontalAlignment="Left" Margin="24,196,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="readStrem" Content="Odczyt Stream" HorizontalAlignment="Left" Margin="24,196,0,0" VerticalAlignment="Top" Width="120" Click="ReadStrem_Click"/>
 
     </Grid>
 </Window>
