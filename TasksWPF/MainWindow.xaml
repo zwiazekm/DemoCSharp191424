@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TasksWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="270" Width="684.5">
+        Title="MainWindow" Height="313" Width="684.5">
     <Grid>
         <TextBox x:Name="infoText" HorizontalAlignment="Left" Height="23" Margin="24,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFBBF789"/>
         <Button x:Name="infoButton" HorizontalAlignment="Left" Margin="158,21,0,0" VerticalAlignment="Top" Width="89" Height="67" Background="#FF44AEF7" Click="InfoButton_Click">
@@ -15,7 +15,11 @@
             </StackPanel>
         </Button>
         <Label x:Name="infoLabel" Content="" HorizontalAlignment="Left" Margin="267,21,0,0" VerticalAlignment="Top" Width="293" Grid.ColumnSpan="2" Background="#FFF5FDA7"/>
-        <Button x:Name="newTaskButton" Content="New Task" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" Width="75" Click="NewTaskButton_Click"/>
+        <Button x:Name="newTaskButton" Content="New Task" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" Width="120" Click="NewTaskButton_Click"/>
+        <ListBox x:Name="taskList" HorizontalAlignment="Left" Height="100" Margin="180,105,0,0" VerticalAlignment="Top" Width="340"/>
+        <Button x:Name="taskListButton" Content="Niezakończone" HorizontalAlignment="Left" Margin="24,141,0,0" VerticalAlignment="Top" Width="120" Click="TaskListButton_Click"/>
+        <Button x:Name="saveUncompleted" Content="Zapisz niezakończone" HorizontalAlignment="Left" Height="20" Margin="24,171,0,0" VerticalAlignment="Top" Width="120" Click="SaveUncompleted_Click"/>
+        <Button x:Name="readStrem" Content="Odczyt Stream" HorizontalAlignment="Left" Margin="24,196,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

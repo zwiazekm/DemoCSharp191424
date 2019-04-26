@@ -37,9 +37,9 @@ namespace Szkolenie.Tasks
         {
             var wyn = from t in tasks
                       where t.Done == false
-                      select t.ToString();
+                      select t.Info();
             //select new { name = t.Title, enddate = t.DueDate };
-            var wyn2 = tasks.Where(t => t.Done == false).Select(t => t.ToString());
+            var wyn2 = tasks.Where(t => t.Done == false).Select(t => t.Info());
             return wyn.ToList();
         }
     }
