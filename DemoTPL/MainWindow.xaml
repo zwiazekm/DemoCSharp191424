@@ -1,0 +1,21 @@
+﻿<Window x:Class="DemoTPL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoTPL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="325.5" Width="609.5">
+    <Grid>
+        <Button x:Name="longRunButton" Content="Long Running" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" Width="90" Click="LongRunButton_Click"/>
+        <Button x:Name="waitButton" Content="Waiting task" HorizontalAlignment="Left" Margin="24,45,0,0" VerticalAlignment="Top" Width="90" Height="27" Click="WaitButton_Click"/>
+        <Button x:Name="taskretString" Content="Return string" HorizontalAlignment="Left" Height="25" Margin="24,92,0,0" VerticalAlignment="Top" Width="90" Click="TaskretString_Click"/>
+        <TextBox x:Name="infoTxt" HorizontalAlignment="Left" Height="25" Margin="176,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
+        <Button x:Name="chilTaksButton" Content="Child Tasks" HorizontalAlignment="Left" Height="30" Margin="24,138,0,0" VerticalAlignment="Top" Width="90" Click="ChilTaksButton_Click"/>
+        <Button x:Name="dispatcheDemo" Content="Dispatcher" HorizontalAlignment="Left" Height="27" Margin="24,184,0,0" VerticalAlignment="Top" Width="90" Click="DispatcheDemo_Click"/>
+        <Button x:Name="awaitableBUtton" Content="Awaitable" HorizontalAlignment="Left" Height="27" Margin="24,225,0,0" VerticalAlignment="Top" Width="90" Click="AwaitableBUtton_Click"/>
+        <Button Content="Parallel" HorizontalAlignment="Left" Height="27" Margin="159,225,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
+        <Button Content="Using Excel" HorizontalAlignment="Left" Height="27" Margin="458,225,0,0" VerticalAlignment="Top" Width="115" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
